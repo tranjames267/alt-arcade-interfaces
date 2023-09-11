@@ -18,6 +18,7 @@ void loop() {
   // Serial.println(lightDownVal);
 
   // photocells read about 930 in a fully lit room
+  // this can change based on the photocell and resistor
   if(lightUpVal >= 960){
     Serial.println("UP");
   }
