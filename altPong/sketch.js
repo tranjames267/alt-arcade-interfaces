@@ -73,9 +73,9 @@ function draw() {
         text('PONG', width / 2, 190);
 
         textSize(25);
-        text('Press ENTER to start, SHIFT to reset', width / 2, 300);
-        text('Press A to light the paddles, S for the ball', width / 2, 350);
-        text('Use UP and DOWN arrow keys to move', width / 2, 400);
+        text('Press ENTER to start, SHIFT to reset',width/2, 300);
+        text('Press A to light the paddles, S for the ball',width/2, 350); 
+        text('O moves the paddle up, L moves it down', width/2, 400);
 
         noFill();
         strokeWeight(10);
@@ -100,7 +100,7 @@ function draw() {
         if (ballColor == 255) {
             ballTimer++;
         }
-        if (ballTimer == 300) { // 5 seconds due to fr of 60f/s
+        if (ballTimer == 480) { // 8 seconds due to fr of 60f/s
             ballColor = 0;
             ballTimer = 0;
             lightOff.play();
@@ -118,7 +118,7 @@ function draw() {
         if (paddleColor == 255) {
             paddleTimer++;
         }
-        if (paddleTimer == 780) { // 13 seconds due to fr of 60f/s
+        if (paddleTimer == 900) { // 15 seconds due to fr of 60f/s
             paddleColor = 0;
             paddleTimer = 0;
             lightOff.play();
@@ -225,10 +225,10 @@ function draw() {
 
         // computer player
         if (paddle2Y > ballY && paddle2Y > 50) {
-            paddle2Y -= playerSpeed;
+            paddle2Y -= 2.3;
         }
         if (paddle2Y < ballY && paddle2Y < height - 50) {
-            paddle2Y += playerSpeed;
+            paddle2Y += 2.3;
         }
     }
 } // close draw
